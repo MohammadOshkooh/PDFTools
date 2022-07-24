@@ -1,6 +1,11 @@
 from django import forms
 
 
-class PDFForm(forms.Form):
+class MergeForm(forms.Form):
     pdf = forms.FileField(
-        widget=forms.FileInput(attrs={'style': 'display:none;', 'id': 'file', 'multiple': True, 'name': 'files'}))
+        widget=forms.FileInput(attrs={'style': 'display:none;', 'id': 'file', 'multiple': True,}))
+
+
+class SplitForm(forms.Form):
+    pdf = forms.FileField(
+        widget=forms.FileInput(attrs={'style': 'display:none;', 'id': 'file',}))
