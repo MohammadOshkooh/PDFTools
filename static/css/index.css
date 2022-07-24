@@ -60,6 +60,11 @@ body {
     cursor: pointer;
 }
 
+
+.drag-area img:hover {
+    background-color: cornflowerblue;
+}
+
 .drag-area img {
     height: 100%;
     width: 100%;

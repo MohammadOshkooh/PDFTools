@@ -10,15 +10,25 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-  <div class="drag-area">
-    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-    <header>Drag & Drop to Upload File</header>
-    <span>OR</span>
-    <button>Browse File</button>
-    <input type="file" hidden>
-  </div>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="drag-area">
+        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <header>Drag & Drop to Upload File</header>
+        <span style="font-size: 14px">OR</span>
+        {#        <label for="file">#}
+        <label for="file">
+                <img src="{% static 'icon/icons8-upload-96.png' %}" style="width: 70px;" alt="" id="upload-icon">
+        </label>
+        <button id="'button" style="margin-top: 40px">Confirm</button>
+        {#        </label>#}
+        {#        <input type="file" hidden id="file">#}
+        {{ upload_pdf_form.pdf }}
+    </div>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script>
 
-  <script src="{% static 'js/index.js' %}"></script>
-
+    </script>
+</form>
 </body>
 </html>
