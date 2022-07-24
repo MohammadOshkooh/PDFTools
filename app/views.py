@@ -34,8 +34,14 @@ def split(request):
     if request.method == 'POST':
         split_form = SplitForm(request.POST, request.FILES)
         if split_form.is_valid():
-            numbers_array = request.POST['array']
             pdf = split_form.cleaned_data.get('pdf')
+
+            numbers_array = request.POST['array']
+            numbers_array = numbers_array.replace('[', '').replace(']', '').replace('(', '').replace(')', '').split(',')
+            for i in numbers_array:
+                print(i)
+                
+
 
             # split
             input_pdf = PdfFileReader(pdf)
@@ -51,7 +57,7 @@ def split(request):
             return redirect(reverse_lazy('app:split'))
 
     else:
-        split_form = MergeForm()
+        split_form = SplitForm()
 
     context = {
         'upload_pdf_form': split_form
