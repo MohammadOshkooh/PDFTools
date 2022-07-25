@@ -33,7 +33,7 @@ def merge(request):
             os.remove('merged.pdf')
             messages.success(request, 'done successfully')
 
-            return render(request, 'app/link.html', {'files': pdf_model, 'command': 'merge'})
+            return render(request, 'app/link.html', {'file': pdf_model, 'command': 'merge'})
     else:
         merge_form = MergeForm()
 

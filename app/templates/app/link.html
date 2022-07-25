@@ -9,13 +9,13 @@
         {% if command == 'split' %}
             {% for file in files %}
                 <p>
-                    <a href="http://127.0.0.1:8001/media/{{ file }}" target="_blank"
-                       rel="noopener noreferrer">{{ file }}</a>
+                    <a href="{{ file.pdf.url }}" target="_blank" rel="noopener noreferrer">{{ file.pdf }}</a>
                 </p>
             {% endfor %}
         {% else %}
-            <a href="http://127.0.0.1:8001/media/{{ files }}" target="_blank"
-               rel="noopener noreferrer">{{ files }}</a>
+            <p>
+                <a href="{{ file.pdf.url }}">{{ file.pdf }}</a>
+            </p>
         {% endif %}
 
     </div>
