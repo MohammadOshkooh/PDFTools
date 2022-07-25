@@ -5,7 +5,7 @@ from django.core.files import File
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
-from app.forms import MergeForm, SplitForm
+from app.forms import MergeForm, SplitForm, PdfToWordForm
 
 from app.models import PDF
 
@@ -27,10 +27,11 @@ def merge(request):
                 out_file.write(output_stream)
 
             # Save merged file in the db
-            pdf_model = PDF.objects.create(pdf=File(file=open('merged.pdf', 'rb'), name='merged_file.pdf'))
+            pdf_model = PDF.objects.create(pdf=File(file=open('merged.pdf', 'rb'), name='file.pdf'))
 
             # Remove file in local after save in db
             os.remove('merged.pdf')
+
             messages.success(request, 'done successfully')
 
             return render(request, 'app/link.html', {'file': pdf_model, 'command': 'merge'})
@@ -79,7 +80,7 @@ def split(request):
                     output_pdf.write(out)
 
                 # Save merged file in the db
-                pdf_model = PDF.objects.create(pdf=File(file=open(f'{i}.pdf', 'rb'), name='merged_file.pdf'))
+                pdf_model = PDF.objects.create(pdf=File(file=open(f'{i}.pdf', 'rb'), name='file.pdf'))
 
                 # Remove file in local after save in db
                 os.remove(f'{i}.pdf')
@@ -95,3 +96,35 @@ def split(request):
         'upload_pdf_form': split_form
     }
     return render(request, 'app/split.html', context)
+
+
+def pdf_to_word(request):
+    if request.method == 'POST':
+        form = PdfToWordForm(request.POST, request.FILES)
+        if form.is_valid():
+            # get pdf
+            pdf = form.cleaned_data.get('pdf')
+            p = PdfFileMerger()
+            p.append(pdf)
+
+            # save file on the local
+            with open('file.doc', 'wb') as out:
+                p.write(out)
+
+            # Save merged file in the db
+            model = PDF.objects.create(pdf=File(file=open('file.doc', 'rb'), name='file.doc'))
+
+            # Remove file in local after save in db
+            os.remove('file.doc')
+
+            messages.success(request, 'done successfully')
+
+            return render(request, 'app/link.html', {'file': model, 'command': 'to_word'})
+
+    else:
+        form = PdfToWordForm()
+
+    context = {
+        'upload_pdf_form': form,
+    }
+    return render(request, 'app/pdf_to_word.html', context)

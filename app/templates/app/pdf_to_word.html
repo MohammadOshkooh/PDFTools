@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}
 
-{% endblock %}
+{% block title %}Pdf to Word{% endblock %}
 
 {% block content %}
 
@@ -15,18 +14,11 @@
                 <img src="{% static 'icon/icons8-upload-96.png' %}" style="width: 70px;" alt="" id="upload-icon">
             </label>
             <div>
-                <input type="text" style="width: 333px; height: 55px; display: none;" id="array" name="array"
-                       placeholder="please enter split range. Example:[(5,11),(15,55)...]">
                 <button id="'button" style="margin-top: 40px">Confirm</button>
             </div>
             {{ upload_pdf_form.pdf }}
         </div>
-
-        <script>
-            document.querySelector('#upload-icon').onclick = function (e) {
-                document.getElementById('array').style.display = '';
-            };
-        </script>
     </form>
+
 
 {% endblock %}

@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cdde6f3-d747-4a22-978e-0e9d60ebc938" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/templates/app/pdf_to_word.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file.doc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/app/link.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/link.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/app/split.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/app/split.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +69,9 @@
       <recent name="$PROJECT_DIR$/static/icon" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/templates/app" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="project_config" type="Python.DjangoServer" factoryName="Django server">
@@ -114,7 +124,7 @@
       <workItem from="1658660093222" duration="16074000" />
       <workItem from="1658732609090" duration="1748000" />
       <workItem from="1658737618705" duration="9354000" />
-      <workItem from="1658772445529" duration="2972000" />
+      <workItem from="1658772445529" duration="5481000" />
     </task>
     <servers />
   </component>
