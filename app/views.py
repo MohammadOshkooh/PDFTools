@@ -27,13 +27,13 @@ def merge(request):
                 out_file.write(output_stream)
 
             # Save merged file in the db
-            PDF.objects.create(pdf=File(file=open('merged.pdf', 'rb'), name='merged_file.pdf'))
+            pdf_model = PDF.objects.create(pdf=File(file=open('merged.pdf', 'rb'), name='merged_file.pdf'))
 
             # Remove file in local after save in db
             os.remove('merged.pdf')
             messages.success(request, 'done successfully')
 
-            return redirect(reverse_lazy('app:merge'))
+            return render(request, 'app/link.html', {'files': pdf_model, 'command': 'merge'})
     else:
         merge_form = MergeForm()
 
@@ -62,6 +62,8 @@ def split(request):
             # Splitting
             input_pdf = PdfFileReader(pdf)
 
+            files = []
+
             # convert to (x,y) (t,m) and splitting
             for i in range(0, int(len(numbers_array) / 2)):
                 output_pdf = PdfFileWriter()
@@ -77,12 +79,14 @@ def split(request):
                     output_pdf.write(out)
 
                 # Save merged file in the db
-                PDF.objects.create(pdf=File(file=open(f'{i}.pdf', 'rb'), name='merged_file.pdf'))
+                pdf_model = PDF.objects.create(pdf=File(file=open(f'{i}.pdf', 'rb'), name='merged_file.pdf'))
 
                 # Remove file in local after save in db
                 os.remove(f'{i}.pdf')
+
+                files.append(pdf_model)
         messages.success(request, 'done successfully')
-        return redirect(reverse_lazy('app:split'))
+        return render(request, 'app/link.html', {'files': files, 'command': 'split'})
 
     else:
         split_form = SplitForm()

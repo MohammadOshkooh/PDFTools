@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}link{% endblock %}
+
+{% block content %}
+
+    <div class="drag-area">
+        {% if command == 'split' %}
+            {% for file in files %}
+                <p>
+                    <a href="http://127.0.0.1:8001/media/{{ file }}" target="_blank"
+                       rel="noopener noreferrer">{{ file }}</a>
+                </p>
+            {% endfor %}
+        {% else %}
+            <a href="http://127.0.0.1:8001/media/{{ files }}" target="_blank"
+               rel="noopener noreferrer">{{ files }}</a>
+        {% endif %}
+
+    </div>
+
+    <script src="{% static 'js/index.js' %}"></script>
+
+{% endblock %}
