@@ -8,6 +8,7 @@ online pdf tools wit django and python
 
 - [X] Merge
 - [X] Split
+- [X] Pdf To Word
 
 # Technologies used in PdfTools
 
