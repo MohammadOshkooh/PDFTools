@@ -44,17 +44,6 @@ Configuration of project almost done.
 python manage.py migrate
 </pre>
 
-
-<p>
-For use the project first you should create a superuser. So type this command in Terminal or Console:
-</p>
-<pre>
-python manage.py createsuperuser
-</pre>
-<p>
-After creating a superuser you can login into your admin panels.
-</p>
-
 <hr>
 <h4>
 ⭐️ Now you can use all the features of Pdf Tools.
