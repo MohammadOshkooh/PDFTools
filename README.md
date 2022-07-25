@@ -5,22 +5,16 @@
 
   <hr>
 
-<p>
-Online Pdf Tools <br>
-</p>
 
-<h3>
-⭐️ Pdf Tools features 
-</h3>
+# Online Pdf Tools 
 
-<ul>
-  <li></li>
 
-</ul>
+# Pdf Tools features 
+- [X] Merge
+- [X] Split
 
-<h3> 
-⭐  Technologies used in GreenChat
-</h3>
+
+# Technologies used in GreenChat
 
 <ul>
   <li></li>
