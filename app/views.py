@@ -38,23 +38,24 @@ def split(request):
 
             numbers_array = request.POST['array']
             numbers_array = numbers_array.replace('[', '').replace(']', '').replace('(', '').replace(')', '').split(',')
-            for i in numbers_array:
-                print(i)
-                
-
 
             # split
             input_pdf = PdfFileReader(pdf)
-            output_pdf = PdfFileWriter()
 
-            # for i in range(10, 20):
-            #     output_pdf.addPage(input_pdf.getPage(i))
-            #
-            with open('file.pdf', 'wb') as out:
-                output_pdf.write(out)
+            for i in range(0, int(len(numbers_array) / 2)):
+                output_pdf = PdfFileWriter()
+                
+                a = int(numbers_array[2 * i]) - 1
+                b = int(numbers_array[2 * i + 1])
 
-            messages.success(request, 'done successfully')
-            return redirect(reverse_lazy('app:split'))
+                for j in range(a, b):
+                    output_pdf.addPage(input_pdf.getPage(j))
+
+                with open(f'{i}.pdf', 'wb') as out:
+                    output_pdf.write(out)
+
+        messages.success(request, 'done successfully')
+        return redirect(reverse_lazy('app:split'))
 
     else:
         split_form = SplitForm()
