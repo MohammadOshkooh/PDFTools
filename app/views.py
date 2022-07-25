@@ -1,3 +1,5 @@
+import os
+
 from PyPDF2 import PdfFileReader, PdfFileWriter, PdfFileMerger
 from django.core.files import File
 from django.shortcuts import render, redirect
@@ -27,6 +29,8 @@ def merge(request):
             # Save merged file in the db
             PDF.objects.create(pdf=File(file=open('merged.pdf', 'rb'), name='merged_file.pdf'))
 
+            # Remove file in local after save in db
+            os.remove('merged.pdf')
             messages.success(request, 'done successfully')
 
             return redirect(reverse_lazy('app:merge'))
@@ -75,6 +79,8 @@ def split(request):
                 # Save merged file in the db
                 PDF.objects.create(pdf=File(file=open(f'{i}.pdf', 'rb'), name='merged_file.pdf'))
 
+                # Remove file in local after save in db
+                os.remove(f'{i}.pdf')
         messages.success(request, 'done successfully')
         return redirect(reverse_lazy('app:split'))
 
