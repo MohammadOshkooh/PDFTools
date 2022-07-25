@@ -9,7 +9,7 @@ online pdf tools wit django and python
 - [X] Merge
 - [X] Split
 
-# Technologies used in GreenChat
+# Technologies used in PdfTools
 
 <ul>
   <li>Django</li>
