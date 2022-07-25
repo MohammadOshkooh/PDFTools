@@ -44,7 +44,7 @@ def split(request):
 
             for i in range(0, int(len(numbers_array) / 2)):
                 output_pdf = PdfFileWriter()
-                
+
                 a = int(numbers_array[2 * i]) - 1
                 b = int(numbers_array[2 * i + 1])
 
