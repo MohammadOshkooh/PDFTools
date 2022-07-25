@@ -1,23 +1,20 @@
 <img src="https://github.com/MohammadOshkooh/PdfTools/blob/master/static/icon/icon.png?raw=true" alt="GreenChat" width="40%">
 
+# Online Pdf Tools
 
-<h1>Pdf Tools</h1>
+online pdf tools wit django and python
 
-  <hr>
+# Pdf Tools features
 
-
-# Online Pdf Tools 
-
-
-# Pdf Tools features 
 - [X] Merge
 - [X] Split
-
 
 # Technologies used in GreenChat
 
 <ul>
-  <li></li>
+  <li>Django</li>
+  <li>Python</li>
+  <li>Docker</li>
 </ul>
 
 <hr>
