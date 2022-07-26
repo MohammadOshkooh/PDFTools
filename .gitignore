@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,django,pycharm,venv
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django,pycharm,venv
 
+docker-compose-prod.yml
+
 ### Django ###
 *.log
 *.pot
