@@ -5,9 +5,15 @@ from django.core.files import File
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.views.generic import TemplateView
+
 from app.forms import MergeForm, SplitForm, PdfToWordForm
 
 from app.models import PDF
+
+
+class Index(TemplateView):
+    template_name = 'app/index.html'
 
 
 def merge(request):

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}link{% endblock %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+
+    <div class="drag-area">
+
+        <div class="container">
+            <div style="margin: 20px"><a href="{% url 'app:split' %}" class="button"><span style="margin: 0px">✓</span>Pdf
+                Split</a></div>
+            <div style="margin: 20px"><a href="{% url 'app:merge' %}" class="button orange"><span
+                    style="margin: 0px">✓</span>Pdf Merge</a></div>
+            <div style="margin: 20px"><a href="{% url 'app:to_word' %}" class="button purple"><span style="margin: 0px">✓</span>Pdf
+                To Word</a></div>
+        </div>
+
+    </div>
+
+{% endblock %}
