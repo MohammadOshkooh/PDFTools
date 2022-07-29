@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/link_style.css' %}">
+{% endblock %}
 {% block title %}link{% endblock %}
 
 {% block content %}
@@ -8,16 +10,22 @@
     <div class="drag-area">
         {% if command == 'split' %}
             {% for file in files %}
-                <p>
-                    <a href="{{ file.pdf.url }}" target="_blank" rel="noopener noreferrer">{{ file.pdf }}</a>
-                </p>
+                <div class="wrapper">
+                    <span class="square individual">
+                        <a class="ninth before after" href="{{ file.pdf.url }}" target="_blank"
+                           rel="noopener noreferrer">{{ file.pdf }}</a>
+                    </span>
+                </div>
+
             {% endfor %}
         {% else %}
-            <p>
-                <a href="{{ file.pdf.url }}">{{ file.pdf }}</a>
-            </p>
+            <div class="wrapper">
+                    <span class="square individual">
+                        <a class="ninth before after" href="{{ file.pdf.url }}">{{ file.pdf }}</a>
+                    </span>
+            </div>
         {% endif %}
 
     </div>
-
+    
 {% endblock %}
