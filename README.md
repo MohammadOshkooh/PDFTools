@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/MohammadOshkooh/PdfTools/blob/master/static/icon/icon.png?raw=true" alt="GreenChat" width="40%">
+<img src="https://github.com/MohammadOshkooh/PdfTools/blob/master/static/icon/icon.png?raw=true" alt="PdfTools">
 </p>
 
 # Online Pdf Tools
