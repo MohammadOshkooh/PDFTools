@@ -73,3 +73,10 @@ body {
     object-fit: cover;
     border-radius: 5px;
 }
+
+@media only screen and (max-width: 570px) {
+
+    .in{
+        display: grid;
+    }
+}
